@@ -34,7 +34,9 @@ class _HomeState extends State<Home> {
               child: Row(
                 children: [
                   ReuseableCard(
-                    color: selection == genderSection.Male ? activeColor : inActiveColor,
+                    color: selection == genderSection.Male
+                        ? activeColor
+                        : inActiveColor,
                     myChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -56,7 +58,9 @@ class _HomeState extends State<Home> {
                     },
                   ),
                   ReuseableCard(
-                    color: selection == genderSection.Male ? inActiveColor : activeColor,
+                    color: selection == genderSection.Male
+                        ? inActiveColor
+                        : activeColor,
                     myChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -269,11 +273,14 @@ class _HomeState extends State<Home> {
                   height: _height,
                   weight: _weight,
                 );
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ResultScreen(
-                  bmi: calcBMI.calcBMI(),
-                  result: calcBMI.getResult(),
-                  feedback: calcBMI.feedBack(),
-                )));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultScreen(
+                              bmi: calcBMI.calcBMI(),
+                              result: calcBMI.getResult(),
+                              feedback: calcBMI.feedBack(),
+                            )));
               },
               child: Text("CALCULATE"),
               style: ElevatedButton.styleFrom(
